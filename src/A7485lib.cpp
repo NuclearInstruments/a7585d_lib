@@ -329,6 +329,7 @@ void A7585::GetNIPMRegFloat(int device_address, uint8_t register_n, float *data)
   Wire.beginTransmission(device_address); 
   Wire.write(vv[0]); 
   Wire.write(vv[1]); 
+  Wire.endTransmission(false);   
   Wire.requestFrom(device_address, 4);   
   i=0;
   while (Wire.available()) {
@@ -349,6 +350,7 @@ void A7585::GetNIPMRegBoolean(int device_address, uint8_t register_n, bool *data
 Wire.beginTransmission(device_address); 
   Wire.write(vv[0]); 
   Wire.write(vv[1]); 
+  Wire.endTransmission(false);   
   Wire.requestFrom(device_address, 4);   
   i=0;
   while (Wire.available()) {
@@ -368,6 +370,7 @@ void A7585::GetNIPMRegInteger(int device_address, uint8_t register_n, int32_t *d
   Wire.beginTransmission(device_address); 
   Wire.write(vv[0]); 
   Wire.write(vv[1]); 
+  Wire.endTransmission(false);   
   Wire.requestFrom(device_address, 4);   
   i=0;
   while (Wire.available()) {
